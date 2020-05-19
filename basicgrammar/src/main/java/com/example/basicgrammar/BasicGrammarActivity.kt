@@ -27,7 +27,7 @@ class BasicGrammarActivity : AppCompatActivity() {
         Log.d(TAG, "CLASS NAME :" + double2.javaClass.name)
         Log.d(TAG, "fun sum 1 + 2 = " + sum(1,2))
         Log.d(TAG, "fun sum1 1 + 2 = " + sum1(1,2))
-        Log.d(TAG, "fun foo 5 = " + foo(5))
+        Log.d(TAG, "fun foo 5 = " + foo2(5))
     }
 
     //代码块函数体
@@ -41,6 +41,23 @@ class BasicGrammarActivity : AppCompatActivity() {
     //fun foo(n: Int) = if (n == 0) 1 else n * foo(n - 1)
 
     fun foo(n: Int): Int = if (n == 0) 1 else n * foo(n - 1)
+
+    fun foo1(args: Array<String>) {
+        val a: Int
+        a = 1
+        println(a);
+    }
+
+    fun cal(list:List<Int>):Int{
+        return list.fold(0){res,el->res*el+el}
+    }
+
+    fun foo2(x: Int) {
+        fun double(y: Int): Int {
+            return y * 2
+        }
+        Log.d(TAG,"foo2 :"+double(x))
+    }
 
 
 }
